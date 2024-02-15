@@ -9,5 +9,5 @@ jobs:
     steps:
       - name: Mal schauen
       - run: |
-        echo "Hallo"
-        ls
+          echo "Hallo"
+          ls
