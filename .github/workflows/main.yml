@@ -66,4 +66,11 @@ jobs:
       - name: Lookup results in directories . and dist/
         run: |
           ls
+          echo "-------------------"
           ls -R dist/
+
+      - name: Lookup Configured Credentials
+        runs: |
+          echo "${{ vars.BUCKET_NAME }}"
+          echo "${{ SECRETS.AWS_ACCESS_KEY_ID }}"
+          echo "${{ SECRETS.AWS_SECRET_ACCESS_KEY }}"
