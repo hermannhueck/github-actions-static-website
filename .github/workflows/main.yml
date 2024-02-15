@@ -8,10 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: Mal schauen
-        run: |
-          echo "Hallo"
-          ls
+      # - name: Mal schauen
+      #   run: |
+      #     echo "Hallo"
+      #     ls
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -24,4 +24,19 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+
+      # 1) Schritt, der "npm clean-install" ausführt, um die Abhängigkeiten zu installieren
+      - name: Install Dependencies
+        run: |
+          npm clean-install
+
+      # 2) Schritt, der "npm run build" ausführt, um die Website zu erstellen
+      - name: Run the npm build
+        run: |
+          npm run build
+
+      # 3) Schritt, der mit "ls -R dist/" die erzeugten Dateien auflistet
+      - name: Lookup results in directory dist/
+        run: |
+          ls -R dist/
 
