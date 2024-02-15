@@ -20,8 +20,8 @@ jobs:
         run: |
           ls
       
-      - name: Setup Nodejs Environment
+      - name: Setup Node.js Environment
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          
+
