@@ -8,6 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Mal schauen
-      - run: |
+        run: |
           echo "Hallo"
           ls
