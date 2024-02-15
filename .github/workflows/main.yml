@@ -74,3 +74,10 @@ jobs:
           echo "${{ vars.BUCKET_NAME }}"
           echo "${{ SECRETS.AWS_ACCESS_KEY_ID }}"
           echo "${{ SECRETS.AWS_SECRET_ACCESS_KEY }}"
+
+      - name: Login to AWS
+        uses: aws-actions/configure-aws-credentials
+        with:
+          aws-access-key-id: "${{ SECRETS.AWS_ACCESS_KEY_ID }}"
+          aws-secret-access-key:  "${{ SECRETS.AWS_SECRET_ACCESS_KEY }}"
+          aws-region: eu-central-1
