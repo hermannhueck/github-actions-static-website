@@ -41,11 +41,11 @@ jobs:
           ls -R dist/
 
       - name: Upload Artefact
-      - uses: actions/upload-artefact@v4
-      - with:
-        name: website
-        path: dist
-        retension-days: 3 # default: 3
+        uses: actions/upload-artefact@v4
+        with:
+          name: website
+          path: dist
+          retension-days: 3 # default: 3
 
   deploy:
     runs-on: ubuntu-latest
@@ -56,7 +56,7 @@ jobs:
     steps:
 
       - name: Download Artefact
-      - uses: actions/download-artefact@v4
-      - with:
-        name: website
-        path: dist
+        uses: actions/download-artefact@v4
+        with:
+          name: website
+          path: dist
