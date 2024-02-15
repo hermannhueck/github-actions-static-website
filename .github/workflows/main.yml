@@ -45,7 +45,7 @@ jobs:
         with:
           name: website
           path: dist
-          retension-days: 3 # default: 3
+          retention-days: 3 # default: 3
 
   deploy:
     runs-on: ubuntu-latest
