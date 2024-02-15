@@ -16,7 +16,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Nochmal schauen
+      - name: Anschauen
         run: |
           ls
       
@@ -49,16 +49,21 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
+    # requires completed build
     needs:
       - build
-    # requires completed build
+    steps:
     # requires cloud credentials for the cloud to deploy to (AWS S3 bucket)
     # login to web server
     # copy build artifact to the web server
-    steps:
 
       - name: Download Artifact
         uses: actions/download-artifact@v4
         with:
           name: website
           path: dist
+
+      - name: Lookup results in directories . and dist/
+        run: |
+          ls
+          ls -R dist/
