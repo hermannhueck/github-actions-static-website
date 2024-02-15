@@ -70,7 +70,7 @@ jobs:
           ls -R dist/
 
       - name: Lookup Configured Credentials
-        runs: |
+        run: |
           echo "${{ vars.BUCKET_NAME }}"
           echo "${{ SECRETS.AWS_ACCESS_KEY_ID }}"
           echo "${{ SECRETS.AWS_SECRET_ACCESS_KEY }}"
